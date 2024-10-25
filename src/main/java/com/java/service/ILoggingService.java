@@ -1,4 +1,4 @@
-package com.spring.service;
+package com.java.service;
 
 /**
  * @author hieu.nt60
