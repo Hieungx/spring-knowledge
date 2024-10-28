@@ -1,4 +1,4 @@
-package com.java.config;
+package com.java.config.database;
 
 import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Qualifier;
