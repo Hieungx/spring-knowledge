@@ -5,4 +5,5 @@ package com.java.service;
  * 10/25/2024
  */
 public interface IJobService {
+    String testJob();
 }

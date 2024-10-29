@@ -19,7 +19,8 @@ public class JobServiceImpl implements IJobService {
 
     @Recurring(id = "job-test", cron = "${running.cycle.job.job-test}")
     @Job(name = "JOB TEST")
-    public void testJob() {
-        log.info("{} ---> testJob()", this.getClass().getSimpleName());
+    @Override
+    public String testJob() {
+        return "Hello World";
     }
 }
