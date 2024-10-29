@@ -3,3 +3,4 @@ Dự án có tích hợp các công nghệ của Java Spring:
 2. Flyway
 3. Logback
 4. AOP Logging
+5. Catch Exception push webhook
