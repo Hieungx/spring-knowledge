@@ -1,5 +1,7 @@
 package com.java.config;
 
+import com.java.util.JsonUtils;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -34,14 +36,16 @@ public class LoggingAspect {
 
         // Thực hiện method và lấy response
         Object result;
+        String jsonResponse;
         try {
             result = joinPoint.proceed();
+            jsonResponse = ObjectUtils.isEmpty(result) ? null : JsonUtils.convertObjectToJson(result);
         } catch (Exception e) {
             logger.error("Exception in method {}: {}", joinPoint.getSignature(), ExceptionUtils.getStackTrace(e));
             throw e;
         }
         // Log thông tin response trả về nếu có
-        logger.info("Response from {}: {} - Time taken: {} ms", joinPoint.getSignature(), result, System.currentTimeMillis() - startTime);
+        logger.info("Response from {}: {} - Time taken: {} ms", joinPoint.getSignature(), jsonResponse, System.currentTimeMillis() - startTime);
         return result;
     }
 }

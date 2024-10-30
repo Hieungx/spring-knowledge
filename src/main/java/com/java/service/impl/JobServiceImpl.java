@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class JobServiceImpl implements IJobService {
-    //    private static final Logger log = new JobRunrDashboardLogger(LoggerFactory.getLogger(JobServiceImpl.class));
     private static final Logger log = LoggerFactory.getLogger(JobServiceImpl.class);
 
 
